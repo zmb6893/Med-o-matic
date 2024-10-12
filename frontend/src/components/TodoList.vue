@@ -14,7 +14,24 @@ const headers: string[] = [
 
 const taskStore = useTaskStore();
 
-const tableContent: TaskType[] = taskStore.tasks;
+const tableContent: TaskType[] = taskStore.tasks.sort((t1, t2)=>{
+	if (t1.date < t2.date) { // check same day
+		return -1;
+	} else if (t1.date > t2.date) {
+		return 1;
+	} else if (t1.startTime.type == 'AM' && t2.startTime.type == 'PM') { // check same AM/PM
+		return -1;
+	} else if (t1.startTime.type == 'PM' && t2.startTime.type == 'AM') {
+		return 1;
+	} else if (t1.startTime.hour.valueOf() < t2.startTime.hour.valueOf()) { // check same hour
+		return -1;
+	} else if (t1.startTime.hour.valueOf() > t2.startTime.hour.valueOf()) {
+		return 1;
+	} else if (t1.startTime.minute.valueOf() < t2.startTime.minute.valueOf()) { // check minute
+		return -1;
+	}
+	return 1;
+});
 
 const updateStatus = (id: string) => {
 	taskStore.toggleTaskCompletion(id)
