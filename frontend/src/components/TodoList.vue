@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { useTaskStore } from '@/stores/TaskStore';
 import type { TaskType } from './Task/Task';
 
 import { tasks } from '@/data/tasks';
@@ -11,7 +12,13 @@ const headers: string[] = [
 	'Patient'
 ];
 
-const tableContent: TaskType[] = tasks;
+const taskStore = useTaskStore();
+
+const tableContent: TaskType[] = taskStore.tasks;
+
+const updateStatus = (id: string) => {
+	taskStore.toggleTaskCompletion(id)
+}
 
 </script>
 
@@ -25,7 +32,7 @@ const tableContent: TaskType[] = tasks;
 	<tbody>
 		<tr v-for="task in tableContent">
 			<td>
-				<input type="checkbox">
+				<input type="checkbox" @click="updateStatus(task.id)">
 			</td>
 			<td> {{ `${task.startTime.hour}:${task.startTime.minute.toString().padStart(2, '0')} ${task.startTime.type}` }}</td>
 			<td> {{ task.name }}</td>

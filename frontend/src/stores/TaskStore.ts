@@ -18,8 +18,8 @@ export const useTaskStore = defineStore('taskStore', {
 			const task = this.tasks.find(task => task.id === taskId);
 			if (task) {
 				if (task.status === 'COMPLETE') task.status = 'INCOMPLETE';
-				if (task.status === 'INCOMPLETE') task.status = 'COMPLETE';
-				if (task.status === 'UNCLAIMED') task.status = 'COMPLETE';
+				else if (task.status === 'INCOMPLETE') task.status = 'COMPLETE';
+				else if (task.status === 'UNCLAIMED') task.status = 'INCOMPLETE';
 			}
 		}
 	},
