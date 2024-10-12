@@ -32,7 +32,11 @@ const updateStatus = (id: string) => {
 	<tbody>
 		<tr v-for="task in tableContent">
 			<td>
-				<input type="checkbox" @click="updateStatus(task.id)">
+				<input 
+					type="checkbox" 
+					:checked="task.status === 'COMPLETE'"
+					@click="updateStatus(task.id)"
+					>
 			</td>
 			<td> {{ `${task.startTime.hour}:${task.startTime.minute.toString().padStart(2, '0')} ${task.startTime.type}` }}</td>
 			<td> {{ task.name }}</td>
