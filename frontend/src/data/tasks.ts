@@ -20,6 +20,40 @@ export const tasks: TaskType[] = [
 			minute: 0,
 			type: 'AM'
 		}
+	},
+	{
+		status: 'INCOMPLETE',
+		name: 'Flip patient off',
+		owner: 'Spatula',
+		patient: 'Pan Cake',
+		date: new Date(),	
+		startTime: {
+			hour: 8,
+			minute: 0,
+			type: 'AM'
+		},
+		endTime: {
+			hour: 10,
+			minute: 0,
+			type: 'AM'
+		}
+	},
+	{
+		status: 'COMPLETE',
+		name: 'Flip patient up',
+		owner: 'Spatula',
+		patient: 'Pan Cake',
+		date: new Date(),
+		startTime: {
+			hour: 8,
+			minute: 0,
+			type: 'AM'
+		},
+		endTime: {
+			hour: 9,
+			minute: 0,
+			type: 'AM'
+		}
 	}, {
 		status: 'INCOMPLETE',
 		name: 'Follow up on patient prescription',
@@ -139,14 +173,30 @@ export const tasks: TaskType[] = [
 		patient: 'Isadora M.',
 		date: new Date(),
 		startTime: {
-			hour: 6,
+			hour: 4,
 			minute: 0,
-			type: 'AM'
+			type: 'PM'
 		},
 		endTime: {
-			hour: 7,
+			hour: 5,
 			minute: 0,
-			type: 'AM'
+			type: 'PM'
+		}
+	}, {
+		status: 'UNCLAIMED',
+		name: 'Follow up on patient prescription',
+		owner: 'Fred',
+		patient: 'Isadora M.',
+		date: new Date(),
+		startTime: {
+			hour: 5,
+			minute: 0,
+			type: 'PM'
+		},
+		endTime: {
+			hour: 6,
+			minute: 0,
+			type: 'PM'
 		}
 	}, {
 		status: 'UNCLAIMED',
@@ -157,12 +207,12 @@ export const tasks: TaskType[] = [
 		startTime: {
 			hour: 6,
 			minute: 0,
-			type: 'AM'
+			type: 'PM'
 		},
 		endTime: {
 			hour: 7,
 			minute: 0,
-			type: 'AM'
+			type: 'PM'
 		}
 	}, {
 		status: 'UNCLAIMED',
@@ -173,28 +223,12 @@ export const tasks: TaskType[] = [
 		startTime: {
 			hour: 6,
 			minute: 0,
-			type: 'AM'
+			type: 'PM'
 		},
 		endTime: {
 			hour: 7,
 			minute: 0,
-			type: 'AM'
-		}
-	}, {
-		status: 'UNCLAIMED',
-		name: 'Follow up on patient prescription',
-		owner: 'Fred',
-		patient: 'Isadora M.',
-		date: new Date(),
-		startTime: {
-			hour: 6,
-			minute: 0,
-			type: 'AM'
-		},
-		endTime: {
-			hour: 7,
-			minute: 0,
-			type: 'AM'
+			type: 'PM'
 		}
 	},
 ]

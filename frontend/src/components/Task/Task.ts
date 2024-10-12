@@ -1,5 +1,5 @@
 export type TaskType = {
-	status: 'UNCLAIMED' |'INCOMPLETE' | 'COMPLETE'
+	status: 'UNCLAIMED' | 'INCOMPLETE' | 'COMPLETE'
 	name: string
 	owner: string
 	patient: string

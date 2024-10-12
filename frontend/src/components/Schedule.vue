@@ -1,59 +1,10 @@
 <script lang="ts" setup>
 import Task from './Task/Task.vue';
+import { tasks } from '@/data/tasks';
 import { type TaskType } from './Task/Task'
 
 const hours = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5PM', '6PM', '7PM']
 
-const tasks: TaskType[] = [
-	{
-		status: 'UNCLAIMED',
-		name: 'Flip patient',
-		owner: 'Spatula',
-		date: new Date(),
-		startTime: {
-			hour: 6,
-			minute: 0,
-			type: 'AM'
-		},
-		endTime: {
-			hour: 7,
-			minute: 0,
-			type: 'AM'
-		}
-	},
-	{
-		status: 'INCOMPLETE',
-		name: 'Flip patient off',
-		owner: 'Spatula',
-		date: new Date(),
-		startTime: {
-			hour: 8,
-			minute: 0,
-			type: 'AM'
-		},
-		endTime: {
-			hour: 10,
-			minute: 0,
-			type: 'AM'
-		}
-	},
-	{
-		status: 'COMPLETE',
-		name: 'Flip patient up',
-		owner: 'Spatula',
-		date: new Date(),
-		startTime: {
-			hour: 8,
-			minute: 0,
-			type: 'AM'
-		},
-		endTime: {
-			hour: 9,
-			minute: 0,
-			type: 'AM'
-		}
-	}
-]
 </script>
 
 <template>
