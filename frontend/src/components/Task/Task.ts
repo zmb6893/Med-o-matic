@@ -3,6 +3,7 @@ export type TaskType = {
 	name: string
 	owner: string
 	patient: string
+	location: string
 	date: Date
 	startTime: TaskTime 
 	endTime: TaskTime

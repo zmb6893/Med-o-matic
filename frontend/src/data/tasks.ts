@@ -9,6 +9,7 @@ export const tasks: TaskType[] = [
 		name: 'Flip patient',
 		owner: '',
 		patient: 'Sue P.',
+		location: 'room 203',
 		date: new Date(),
 		startTime: {
 			hour: 6,
@@ -26,6 +27,7 @@ export const tasks: TaskType[] = [
 		name: 'Flip patient off',
 		owner: 'Spatula',
 		patient: 'Pan Cake',
+		location: 'room 203',
 		date: new Date(),	
 		startTime: {
 			hour: 8,
@@ -43,6 +45,7 @@ export const tasks: TaskType[] = [
 		name: 'Flip patient up',
 		owner: 'Spatula',
 		patient: 'Pan Cake',
+		location: 'room 203',
 		date: new Date(),
 		startTime: {
 			hour: 8,
@@ -59,6 +62,7 @@ export const tasks: TaskType[] = [
 		name: 'Follow up on patient prescription',
 		owner: 'Fred',
 		patient: 'Isadora M.',
+		location: 'room 203',
 		date: new Date(),
 		startTime: {
 			hour: 8,
@@ -75,6 +79,7 @@ export const tasks: TaskType[] = [
 		name: 'Follow up on patient prescription',
 		owner: '',
 		patient: 'Fung I.',
+		location: 'room 203',
 		date: new Date(),
 		startTime: {
 			hour: 10,
@@ -91,6 +96,7 @@ export const tasks: TaskType[] = [
 		name: 'Flip patient off',
 		owner: 'Fred',
 		patient: 'Isadora M.',
+		location: 'room 203',
 		date: new Date(),
 		startTime: {
 			hour: 1,
@@ -107,6 +113,7 @@ export const tasks: TaskType[] = [
 		name: 'Follow up on patient prescription',
 		owner: 'Fred',
 		patient: 'Isadora M.',
+		location: 'room 203',
 		date: new Date(),
 		startTime: {
 			hour: 4,
@@ -123,6 +130,7 @@ export const tasks: TaskType[] = [
 		name: 'Follow up on patient prescription',
 		owner: 'Fred',
 		patient: 'Isadora M.',
+		location: 'room 203',
 		date: new Date(),
 		startTime: {
 			hour: 6,
@@ -139,6 +147,7 @@ export const tasks: TaskType[] = [
 		name: 'Follow up on patient prescription',
 		owner: 'Fred',
 		patient: 'Isadora M.',
+		location: 'room 203',
 		date: new Date(),
 		startTime: {
 			hour: 6,
@@ -155,6 +164,7 @@ export const tasks: TaskType[] = [
 		name: 'Follow up on patient prescription',
 		owner: 'Fred',
 		patient: 'Isadora M.',
+		location: 'room 203',
 		date: new Date(),
 		startTime: {
 			hour: 6,
@@ -171,6 +181,7 @@ export const tasks: TaskType[] = [
 		name: 'Follow up on patient prescription',
 		owner: 'Fred',
 		patient: 'Isadora M.',
+		location: 'room 203',
 		date: new Date(),
 		startTime: {
 			hour: 4,
@@ -187,6 +198,7 @@ export const tasks: TaskType[] = [
 		name: 'Follow up on patient prescription',
 		owner: 'Fred',
 		patient: 'Isadora M.',
+		location: 'room 203',
 		date: new Date(),
 		startTime: {
 			hour: 5,
@@ -203,6 +215,7 @@ export const tasks: TaskType[] = [
 		name: 'Follow up on patient prescription',
 		owner: 'Fred',
 		patient: 'Isadora M.',
+		location: 'room 203',
 		date: new Date(),
 		startTime: {
 			hour: 6,
@@ -219,6 +232,7 @@ export const tasks: TaskType[] = [
 		name: 'Follow up on patient prescription',
 		owner: 'Fred',
 		patient: 'Isadora M.',
+		location: 'room 203',
 		date: new Date(),
 		startTime: {
 			hour: 6,

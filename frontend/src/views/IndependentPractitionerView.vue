@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Schedule from '@/components/Schedule.vue';
+import TaskDesc from '@/components/TaskDesc.vue';
 
 
 </script>
@@ -21,6 +22,7 @@ import Schedule from '@/components/Schedule.vue';
 			<h1 class="center">
 				Task Description
 			</h1>
+			<TaskDesc></TaskDesc>
 		</div>
 	</div>
 </template>
