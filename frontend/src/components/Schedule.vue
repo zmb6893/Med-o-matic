@@ -27,12 +27,12 @@ const tasks: TaskType[] = [
 		owner: 'Spatula',
 		date: new Date(),
 		startTime: {
-			hour: 6,
+			hour: 8,
 			minute: 0,
 			type: 'AM'
 		},
 		endTime: {
-			hour: 7,
+			hour: 10,
 			minute: 0,
 			type: 'AM'
 		}
@@ -63,7 +63,9 @@ const tasks: TaskType[] = [
 				{{ time }}
 			</td>
 			<td class="task-cell">
-				<Task :task="tasks[0]"></Task>
+				<Task :tasks="tasks.filter(task => {
+					return `${task.startTime.hour} ${task.startTime.type}` === time;
+				})"></Task>
 			</td>
 		</tr>
 	</table>

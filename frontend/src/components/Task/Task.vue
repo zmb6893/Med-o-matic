@@ -3,15 +3,33 @@
 import { type TaskType } from './Task'
 
 const props = defineProps<{
-  task: TaskType
+  tasks?: TaskType[]
 }>()
 
 </script>
 
 <template>
-	<button class="btn btn-primary task"> {{ task.name }}</button>
+	<button 
+    v-for="task in tasks"
+    class="btn btn-primary task"
+    :class="task.status"
+    > {{ task.name }}</button>
 </template>
 
 <style scoped>
-
+button {
+  color: rgb(120, 120, 120)
+}
+.COMPLETE {
+  background-color: #A8FFAE;
+  border-color: #20B925;
+}
+.INCOMPLETE {
+  background-color: #FF9F9F;
+  border-color: #FF5757;
+}
+.UNCLAIMED {
+  background-color: #9fddff;
+  border-color: #5787ff;
+}
 </style>
