@@ -1,9 +1,10 @@
 import type { TaskType } from "@/components/Task/Task";
+import { tasks } from "@/data/tasks";
 import { defineStore } from "pinia";
 
 export const useTaskStore = defineStore('taskStore', {
 	state: () => ({
-		tasks: [] as TaskType[]
+		tasks: tasks as TaskType[]
 	}),
 
 	actions: {
@@ -16,8 +17,22 @@ export const useTaskStore = defineStore('taskStore', {
 		toggleTaskCompletion(taskId: string) {
 			const task = this.tasks.find(task => task.id === taskId);
 			if (task) {
-				task.status = 'COMPLETE';
+				if (task.status === 'COMPLETE') task.status = 'INCOMPLETE';
+				if (task.status === 'INCOMPLETE') task.status = 'COMPLETE';
+				if (task.status === 'UNCLAIMED') task.status = 'COMPLETE';
 			}
 		}
 	},
+
+	getters: {
+		completedTasks(state) {
+			return state.tasks.filter(task => task.status === 'COMPLETE');
+		},
+		activeTasks(state) {
+			return state.tasks.filter(task => task.status === 'INCOMPLETE');
+		},
+		unclaimedTasks(state) {
+			return state.tasks.filter(task => task.status === 'UNCLAIMED');
+		}
+	}
 });
