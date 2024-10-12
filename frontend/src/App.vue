@@ -4,17 +4,22 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <div class="wrapper">
+    <div class="wrapper nav-bar">
       <nav>
         <RouterLink to="/">Independent Practitioner View</RouterLink>
       </nav>
     </div>
   </header>
-  <div class="container">
-    <RouterView />
-  </div>
+
+  <RouterView style="height: 96%;"/>
   
 </template>
 
 <style scoped>
+.nav-bar {
+  background-color: #FFFFFF;
+  height: 3rem;
+  align-content: center;
+  border-radius: .5rem;
+}
 </style>
