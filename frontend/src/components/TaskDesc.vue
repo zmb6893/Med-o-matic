@@ -1,10 +1,15 @@
 <script lang="ts" setup>
 import { useTaskStore } from '@/stores/TaskStore';
+import { ref } from 'vue';
 
 const taskStore = useTaskStore();
-const tasks = taskStore.tasks;
 
-var task = tasks[1];
+const task = ref(taskStore.selectedTask);
+
+// polling for changes in selected task
+setInterval(() => {
+    task.value = taskStore.selectedTask;
+}, 400)
 
 </script>
 

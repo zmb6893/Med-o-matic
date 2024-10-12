@@ -4,15 +4,18 @@ import { defineStore } from "pinia";
 
 export const useTaskStore = defineStore('taskStore', {
 	state: () => ({
-		tasks: tasks as TaskType[]
+		tasks: tasks as TaskType[],
+		selectedTask: tasks[0] as TaskType
 	}),
 
 	actions: {
 		addTask(task: TaskType) {
 			this.tasks.push(task);
+			this.selectedTask = task;
 		},
 		removeTask(taskId: string) {
 			this.tasks = this.tasks.filter(task => task.id !== taskId);
+			this.selectedTask = tasks[0];
 		},
 		toggleTaskCompletion(taskId: string) {
 			const task = this.tasks.find(task => task.id === taskId);
@@ -21,6 +24,7 @@ export const useTaskStore = defineStore('taskStore', {
 				else if (task.status === 'INCOMPLETE') task.status = 'COMPLETE';
 				else if (task.status === 'UNCLAIMED') task.status = 'INCOMPLETE';
 			}
+			if (task) this.selectedTask = task;
 		}
 	},
 
