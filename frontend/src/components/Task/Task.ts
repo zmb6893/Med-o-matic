@@ -7,6 +7,7 @@ export type TaskType = {
 	date: Date
 	startTime: TaskTime 
 	endTime: TaskTime
+	id: string
 }
 
 export type TaskTime = {

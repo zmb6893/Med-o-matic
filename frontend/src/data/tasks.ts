@@ -5,6 +5,7 @@ export const tasks: TaskType[] = [
 	// Add more TaskTypes here! Checkout the frontend/src/components/Task/Task.ts for the definition
 
 	{
+		id: crypto.randomUUID(),
 		status: 'UNCLAIMED',
 		name: 'Flip patient',
 		owner: '',
@@ -23,6 +24,7 @@ export const tasks: TaskType[] = [
 		}
 	},
 	{
+		id: crypto.randomUUID(),
 		status: 'INCOMPLETE',
 		name: 'Flip patient off',
 		owner: 'Spatula',
@@ -41,6 +43,7 @@ export const tasks: TaskType[] = [
 		}
 	},
 	{
+		id: crypto.randomUUID(),
 		status: 'COMPLETE',
 		name: 'Flip patient up',
 		owner: 'Spatula',
@@ -57,7 +60,9 @@ export const tasks: TaskType[] = [
 			minute: 0,
 			type: 'AM'
 		}
-	}, {
+	}, 
+	{
+		id: crypto.randomUUID(),
 		status: 'INCOMPLETE',
 		name: 'Follow up on patient prescription',
 		owner: 'Fred',
@@ -74,7 +79,9 @@ export const tasks: TaskType[] = [
 			minute: 0,
 			type: 'AM'
 		}
-	}, {
+	}, 
+	{
+		id: crypto.randomUUID(),
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
 		owner: '',
@@ -91,7 +98,9 @@ export const tasks: TaskType[] = [
 			minute: 0,
 			type: 'AM'
 		}
-	}, {
+	}, 
+	{
+		id: crypto.randomUUID(),
 		status: 'UNCLAIMED',
 		name: 'Flip patient off',
 		owner: '',
@@ -108,7 +117,9 @@ export const tasks: TaskType[] = [
 			minute: 0,
 			type: 'PM'
 		}
-	}, {
+	}, 
+	{
+		id: crypto.randomUUID(),
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
 		owner: '',
@@ -125,7 +136,9 @@ export const tasks: TaskType[] = [
 			minute: 0,
 			type: 'PM'
 		}
-	}, {
+	}, 
+	{
+		id: crypto.randomUUID(),
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
 		owner: '',
@@ -142,7 +155,9 @@ export const tasks: TaskType[] = [
 			minute: 0,
 			type: 'AM'
 		}
-	}, {
+	}, 
+	{
+		id: crypto.randomUUID(),
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
 		owner: 'Fred',
@@ -159,7 +174,9 @@ export const tasks: TaskType[] = [
 			minute: 0,
 			type: 'AM'
 		}
-	}, {
+	}, 
+	{
+		id: crypto.randomUUID(),
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
 		owner: '',
@@ -176,7 +193,9 @@ export const tasks: TaskType[] = [
 			minute: 0,
 			type: 'AM'
 		}
-	}, {
+	}, 
+	{
+		id: crypto.randomUUID(),
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
 		owner: '',
@@ -193,7 +212,9 @@ export const tasks: TaskType[] = [
 			minute: 0,
 			type: 'PM'
 		}
-	}, {
+	}, 
+	{
+		id: crypto.randomUUID(),
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
 		owner: '',
@@ -210,7 +231,9 @@ export const tasks: TaskType[] = [
 			minute: 0,
 			type: 'PM'
 		}
-	}, {
+	}, 
+	{
+		id: crypto.randomUUID(),
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
 		owner: '',
@@ -227,7 +250,9 @@ export const tasks: TaskType[] = [
 			minute: 0,
 			type: 'PM'
 		}
-	}, {
+	}, 
+	{
+		id: crypto.randomUUID(),
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
 		owner: '',
