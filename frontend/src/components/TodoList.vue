@@ -47,7 +47,7 @@ const updateStatus = (id: string) => {
 		</tr>
 	</thead>
 	<tbody>
-		<tr v-for="task in tableContent">
+		<tr v-for="task in tableContent" :class="{'glow': task.id === taskStore.selectedTask.id}">
 			<td>
 				<input 
 					type="checkbox" 
@@ -65,4 +65,8 @@ const updateStatus = (id: string) => {
 </template>
 
 <style scoped>
+
+.glow {
+	border: 2px solid rgb(0, 234, 255);
+}
 </style>
