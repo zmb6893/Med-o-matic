@@ -25,6 +25,10 @@ export const useTaskStore = defineStore('taskStore', {
 				else if (task.status === 'UNCLAIMED') task.status = 'INCOMPLETE';
 			}
 			if (task) this.selectedTask = task;
+		},
+		setSelectedTask(taskId: string) {
+			const task = this.tasks.find(task => task.id === taskId)
+			if (task) this.selectedTask = task
 		}
 	},
 

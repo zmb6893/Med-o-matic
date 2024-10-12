@@ -1,10 +1,17 @@
 <script lang="ts" setup>
 
+import { useTaskStore } from '@/stores/TaskStore';
 import { type TaskType } from './Task'
 
 const props = defineProps<{
   tasks?: TaskType[]
 }>()
+
+const taskStore = useTaskStore();
+
+const setSelected = (taskId: string) => {
+  taskStore.setSelectedTask(taskId)
+}
 
 </script>
 
@@ -13,6 +20,7 @@ const props = defineProps<{
     v-for="task in tasks"
     class="btn btn-primary task"
     :class="task.status"
+    @click="setSelected(task.id)"
     > {{ task.name }}</button>
 </template>
 
