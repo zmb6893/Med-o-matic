@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Schedule from '@/components/Schedule.vue';
 import TaskDesc from '@/components/TaskDesc.vue';
+import TodoList from '@/components/TodoList.vue';
 
 
 </script>
@@ -17,6 +18,7 @@ import TaskDesc from '@/components/TaskDesc.vue';
 			<h1 class="center">
 				TODO Tasks
 			</h1>
+			<TodoList></TodoList>
 		</div>
 		<div class="col-3 column-section">
 			<h1 class="center">
