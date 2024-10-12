@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Schedule from '@/components/Schedule.vue';
+
 
 </script>
 
@@ -8,6 +10,7 @@
 			<h1 class="center">
 				Schedule
 			</h1>
+			<Schedule></Schedule>
 		</div>
 		<div class="col-5 column-section">
 			<h1 class="center">
@@ -27,6 +30,7 @@
 		background-color: #FFFFFF;
 		border-radius: .5rem;
 		margin: 1rem;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 	}
 
 	h1 {
