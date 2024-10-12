@@ -94,7 +94,7 @@ export const tasks: TaskType[] = [
 	}, {
 		status: 'UNCLAIMED',
 		name: 'Flip patient off',
-		owner: 'Fred',
+		owner: '',
 		patient: 'Isadora M.',
 		location: 'room 203',
 		date: new Date(),
@@ -111,7 +111,7 @@ export const tasks: TaskType[] = [
 	}, {
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
-		owner: 'Fred',
+		owner: '',
 		patient: 'Isadora M.',
 		location: 'room 203',
 		date: new Date(),
@@ -128,7 +128,7 @@ export const tasks: TaskType[] = [
 	}, {
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
-		owner: 'Fred',
+		owner: '',
 		patient: 'Isadora M.',
 		location: 'room 203',
 		date: new Date(),
@@ -162,7 +162,7 @@ export const tasks: TaskType[] = [
 	}, {
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
-		owner: 'Fred',
+		owner: '',
 		patient: 'Isadora M.',
 		location: 'room 203',
 		date: new Date(),
@@ -179,7 +179,7 @@ export const tasks: TaskType[] = [
 	}, {
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
-		owner: 'Fred',
+		owner: '',
 		patient: 'Isadora M.',
 		location: 'room 203',
 		date: new Date(),
@@ -196,7 +196,7 @@ export const tasks: TaskType[] = [
 	}, {
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
-		owner: 'Fred',
+		owner: '',
 		patient: 'Isadora M.',
 		location: 'room 203',
 		date: new Date(),
@@ -213,7 +213,7 @@ export const tasks: TaskType[] = [
 	}, {
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
-		owner: 'Fred',
+		owner: '',
 		patient: 'Isadora M.',
 		location: 'room 203',
 		date: new Date(),
@@ -230,7 +230,7 @@ export const tasks: TaskType[] = [
 	}, {
 		status: 'UNCLAIMED',
 		name: 'Follow up on patient prescription',
-		owner: 'Fred',
+		owner: '',
 		patient: 'Isadora M.',
 		location: 'room 203',
 		date: new Date(),
