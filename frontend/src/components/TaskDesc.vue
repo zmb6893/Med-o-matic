@@ -126,8 +126,14 @@ function get(): import("vue").ComputedGetter<unknown> {
     <p>Patient name: <input v-model="taskPatient"> </p>
     <p>Location: <input v-model="taskLocation"></p>
     <p>Date: <input v-model="taskDate"></p>
-    <p>Start hour: <input v-model="taskStartHr" type="number"> minute: <input v-model="taskStartMin" type="number"></p>
-    <p>End hour: <input v-model="taskEndHr" type="number"> minute: <input v-model="taskEndMin" type="number"></p>
+    <p>Start hour: 
+        <input v-model="taskStartHr" type="number" class="time-input"> 
+        minute: 
+        <input v-model="taskStartMin" type="number" class="time-input"></p>
+    <p>End hour: 
+        <input v-model="taskEndHr" type="number" class="time-input"> 
+        minute: 
+        <input v-model="taskEndMin" type="number" class="time-input"></p>
 
 </template>
 
@@ -142,6 +148,10 @@ function get(): import("vue").ComputedGetter<unknown> {
 
 .unclaimed-task {
     color: rgb(255, 38, 0);
+}
+
+.time-input {
+    width: 3rem;
 }
 
 </style>
