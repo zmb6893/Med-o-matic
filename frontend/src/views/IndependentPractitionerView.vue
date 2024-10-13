@@ -9,19 +9,19 @@ import TodoList from '@/components/TodoList.vue';
 <template>
 	<div class="row">
 		<div class="col-3 column-section">
-			<h1 class="center">
+			<h1 class="spacing">
 				Schedule
 			</h1>
 			<Schedule></Schedule>
 		</div>
 		<div class="col-5 column-section">
-			<h1 class="center">
+			<h1 class="spacing">
 				TODO Tasks
 			</h1>
 			<TodoList></TodoList>
 		</div>
 		<div class="col-3 column-section">
-			<h1 class="center">
+			<h1 class="spacing">
 				Task Description
 			</h1>
 			<TaskDesc></TaskDesc>
@@ -42,8 +42,7 @@ import TodoList from '@/components/TodoList.vue';
 		font-size: 24px;
 	}
 
-	.center {
-		text-align: center;
-		width: 100%;
+	.spacing {
+		padding: 1rem;
 	}
 </style>
