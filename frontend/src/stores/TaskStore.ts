@@ -33,7 +33,7 @@ export const useTaskStore = defineStore('taskStore', {
 		},
 		setFilterPatient(name: string) {
 			this.filteredTasks = this.tasks.filter(task => {
-				return task.patient.includes(name)
+				return task.patient.toLowerCase().includes(name.toLowerCase())
 			})
 		},
 		updateTaskOwner(newOwner: string) {
