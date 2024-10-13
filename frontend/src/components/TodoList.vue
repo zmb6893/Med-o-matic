@@ -37,6 +37,10 @@ const updateStatus = (id: string) => {
 	taskStore.toggleTaskCompletion(id)
 }
 
+const selectTask = (taskId: string) => {
+	taskStore.setSelectedTask(taskId)
+}
+
 </script>
 
 <template>
@@ -47,7 +51,11 @@ const updateStatus = (id: string) => {
 		</tr>
 	</thead>
 	<tbody>
-		<tr v-for="task in tableContent" :class="{'glow': task.id === taskStore.selectedTask.id}">
+		<tr 
+			v-for="task in tableContent" 
+			:class="{'glow': task.id === taskStore.selectedTask.id}"
+			@click="selectTask(task.id)"
+		>
 			<td>
 				<input 
 					type="checkbox" 
