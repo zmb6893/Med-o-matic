@@ -5,7 +5,8 @@ import { defineStore } from "pinia";
 export const useTaskStore = defineStore('taskStore', {
 	state: () => ({
 		tasks: tasks as TaskType[],
-		selectedTask: tasks[0] as TaskType
+		selectedTask: tasks[0] as TaskType,
+		filterPatient: '' as String
 	}),
 
 	actions: {
@@ -29,6 +30,9 @@ export const useTaskStore = defineStore('taskStore', {
 		setSelectedTask(taskId: string) {
 			const task = this.tasks.find(task => task.id === taskId)
 			if (task) this.selectedTask = task
+		},
+		setFilterPatient(name: string) {
+			this.filterPatient = name;
 		},
 		updateTaskOwner(newOwner: string) {
 			this.selectedTask.owner = newOwner;
