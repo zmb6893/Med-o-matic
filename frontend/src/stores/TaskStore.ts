@@ -34,6 +34,19 @@ export const useTaskStore = defineStore('taskStore', {
 		setFilterPatient(name: string) {
 			this.filteredTasks = this.tasks.filter(task => {
 				return task.patient.toLowerCase().includes(name.toLowerCase())
+			}).sort((t1, t2)=>{
+				if (t1.date < t2.date) { // check same day
+					return -1;
+				} else if (t1.date > t2.date) {
+					return 1;
+				} else if (t1.startTime.hour.valueOf() < t2.startTime.hour.valueOf()) { // check same hour
+					return -1;
+				} else if (t1.startTime.hour.valueOf() > t2.startTime.hour.valueOf()) {
+					return 1;
+				} else if (t1.startTime.minute.valueOf() < t2.startTime.minute.valueOf()) { // check minute
+					return -1;
+				}
+				return 1;
 			})
 		},
 		updateTaskOwner(newOwner: string) {
