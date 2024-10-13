@@ -19,20 +19,28 @@ const updateSelectedTaskOwner = (isChecked: boolean, username: string) => {
     <!-- TODO let a practitioner edit the description -->
 
     <span>
+        <div class="horizontal">
+            <span ><h4>Task Owner:</h4> <h5 :class="{'claimed-task': task.owner, 'unclaimed-task': !task.owner}"> {{ task.owner ? task.owner : 'OWNER NEEDED'}} </h5></span>            
+        </div>
+        
+
+        <span style="display:inline-block; width: 2rem;"></span>
         <input 
             type="checkbox" 
             @change="updateSelectedTaskOwner($event.target?.checked, userStore.user.name)"
             :checked="task.owner === userStore.user.name"
         > Assign to me
-    </span>
 
-    <p>Task Name:</p>
-    <textarea>{{ task.name }}</textarea>
+        <p><b>Task Status</b> <i>{{ task.status }} </i></p>
+    </span>
     
-    <p>Task Status {{ task.status }}</p>
+
+
+    <h4>Task Name:</h4><textarea>{{ task.name }}</textarea>
+    
+    
     <p>Patient name: {{ task.patient }}</p>
     <p>Location: {{ task.location }}</p>
-    <p>Task Owner: {{ task.owner }}</p>
     <p>Date: {{ task.date.toDateString() }}</p>
     <p>Start: {{ task.startTime.hour + ':' + task.startTime.minute.toString().padStart(2, '0') + ' ' + task.startTime.type }}</p>
     <p>End: {{ task.endTime.hour + ':' + task.endTime.minute.toString().padStart(2, '0') + task.endTime.type }}</p>
@@ -42,6 +50,18 @@ const updateSelectedTaskOwner = (isChecked: boolean, username: string) => {
 <style scoped>
 textarea {
     width: 100%;
+}
+
+.horizontal {
+    display: block ruby;
+}
+
+.claimed-task {
+    color: rgb(0, 123, 255);
+}
+
+.unclaimed-task {
+    color: rgb(255, 38, 0);
 }
 
 </style>
