@@ -18,12 +18,13 @@ const updateSelectedTaskOwner = (isChecked: boolean, username: string) => {
 
     <!-- TODO let a practitioner edit the description -->
 
+    <span><h4>Task Name:<textarea>{{ task.name }}</textarea></h4></span>
+
     <span>
         <div class="horizontal">
             <span ><h4>Task Owner:</h4> <h5 :class="{'claimed-task': task.owner, 'unclaimed-task': !task.owner}"> {{ task.owner ? task.owner : 'OWNER NEEDED'}} </h5></span>            
         </div>
         
-
         <span style="display:inline-block; width: 2rem;"></span>
         <input 
             type="checkbox" 
@@ -36,14 +37,13 @@ const updateSelectedTaskOwner = (isChecked: boolean, username: string) => {
     
 
 
-    <h4>Task Name:</h4><textarea>{{ task.name }}</textarea>
     
     
-    <p>Patient name: {{ task.patient }}</p>
-    <p>Location: {{ task.location }}</p>
-    <p>Date: {{ task.date.toDateString() }}</p>
-    <p>Start: {{ task.startTime.hour + ':' + task.startTime.minute.toString().padStart(2, '0') + ' ' + task.startTime.type }}</p>
-    <p>End: {{ task.endTime.hour + ':' + task.endTime.minute.toString().padStart(2, '0') + task.endTime.type }}</p>
+    <p>Patient name: <input :value="task.patient"> </p>
+    <p>Location:  <input :value="task.location"></p>
+    <p>Date: <input :value="task.date.toDateString()"></p>
+    <p>Start: <input :value="task.startTime.hour + ':' + task.startTime.minute.toString().padStart(2, '0') + ' ' + task.startTime.type"></p>
+    <p>End: <input :value="task.endTime.hour + ':' + task.endTime.minute.toString().padStart(2, '0') + task.endTime.type"></p>
 
 </template>
 
