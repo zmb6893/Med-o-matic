@@ -1,11 +1,17 @@
 <script lang="ts" setup>
+import { computed } from 'vue';
 import Task from './Task/Task.vue';
 import { useTaskStore } from '@/stores/TaskStore';
 
 const hours = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5PM', '6PM', '7PM']
 
 const taskStore = useTaskStore();
-const tasks = taskStore.tasks;
+const tasks = computed(() => {
+	const filter = taskStore.filterPatient;
+	return taskStore.tasks.filter((t) => {
+		return t.patient.includes(filter.toString());
+	});
+});
 
 </script>
 

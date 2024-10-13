@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { useTaskStore } from '@/stores/TaskStore';
 import type { TaskType } from './Task/Task';
-
 import { tasks } from '@/data/tasks';
 import { useCurrentUserStore } from '@/stores/CurrentUserStore';
+import { computed } from 'vue';
 
 const headers: string[] = [
 	'Status',
@@ -16,8 +16,14 @@ const headers: string[] = [
 
 const taskStore = useTaskStore();
 const userStore = useCurrentUserStore();
+const tasks = computed(() => {
+	const filter = taskStore.filterPatient;
+	return taskStore.tasks.filter((t) => {
+		return t.patient.includes(filter.toString());
+	});
+}).value;
 
-const tableContent: TaskType[] = taskStore.tasks.sort((t1, t2)=>{
+const tableContent: TaskType[] = tasks.sort((t1, t2)=>{
 	if (t1.date < t2.date) { // check same day
 		return -1;
 	} else if (t1.date > t2.date) {
