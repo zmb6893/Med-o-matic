@@ -53,9 +53,24 @@ const updateSelectedTaskOwner = (isChecked: boolean, username: string, taskId: s
     isChecked ? taskStore.updateTaskOwnerById(taskId, username) : taskStore.updateTaskOwnerById(taskId, '')
 }
 
+const createNewTask = () => {
+	
+}
+
 </script>
 
 <template>
+	<div class="row">
+		<h1 class="spacing col">
+			TODO Tasks
+		</h1>
+		<div class="col align-end">
+			<button 
+				class="btn btn-primary task-button"
+				@click="createNewTask()"
+			> New Task</button>
+		</div>
+	</div>
 	<table class="table table-striped table-hover">
 	<thead>
 		<tr>

@@ -13,6 +13,9 @@ const tasks = computed(() => {
 </script>
 
 <template>
+	<h1 class="spacing">
+		Schedule
+	</h1>
 	<table>
 		<tr v-for="time in hours">
 			<td class="time-stamp">
