@@ -32,6 +32,13 @@ export const useTaskStore = defineStore('taskStore', {
 		},
 		updateTaskOwner(newOwner: string) {
 			this.selectedTask.owner = newOwner;
+		},
+		updateTaskOwnerById(taskId: string, newOwner: string) {
+			this.tasks.forEach(task => {
+				if (task.id === taskId) {
+					task.owner = newOwner;
+				}
+			})
 		}
 	},
 

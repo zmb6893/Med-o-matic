@@ -10,7 +10,6 @@ const task = computed(() => taskStore.selectedTask);
 
 const updateSelectedTaskOwner = (isChecked: boolean, username: string) => {
     isChecked ? taskStore.updateTaskOwner(username) : taskStore.updateTaskOwner('')
-    console.log(task.value.owner)
 }
 
 </script>

@@ -3,16 +3,19 @@ import { useTaskStore } from '@/stores/TaskStore';
 import type { TaskType } from './Task/Task';
 
 import { tasks } from '@/data/tasks';
+import { useCurrentUserStore } from '@/stores/CurrentUserStore';
 
 const headers: string[] = [
 	'Status',
 	'Start',
 	'Task Name',
 	'Location',
-	'Patient'
+	'Patient',
+	'Claim Task'
 ];
 
 const taskStore = useTaskStore();
+const userStore = useCurrentUserStore();
 
 const tableContent: TaskType[] = taskStore.tasks.sort((t1, t2)=>{
 	if (t1.date < t2.date) { // check same day
@@ -41,6 +44,10 @@ const selectTask = (taskId: string) => {
 	taskStore.setSelectedTask(taskId)
 }
 
+const updateSelectedTaskOwner = (isChecked: boolean, username: string, taskId: string) => {
+    isChecked ? taskStore.updateTaskOwnerById(taskId, username) : taskStore.updateTaskOwnerById(taskId, '')
+}
+
 </script>
 
 <template>
@@ -67,6 +74,13 @@ const selectTask = (taskId: string) => {
 			<td> {{ task.name }}</td>
 			<td> {{ task.location }}</td>
 			<td> {{ task.patient }}</td>
+			<td>
+				<input 
+					type="checkbox" 
+					:checked="task.status === 'COMPLETE'"
+					@click="updateSelectedTaskOwner($event.target?.checked, userStore.user.name, task.id)"
+					>
+			</td>
 		</tr>
 	</tbody>
 	</table>
