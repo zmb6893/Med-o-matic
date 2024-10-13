@@ -32,11 +32,11 @@ button {
   background-color: #A8FFAE;
   border-color: #20B925;
 }
-.INCOMPLETE {
+.UNCLAIMED {
   background-color: #FF9F9F;
   border-color: #FF5757;
 }
-.UNCLAIMED {
+.INCOMPLETE {
   background-color: #9fddff;
   border-color: #5787ff;
 }
