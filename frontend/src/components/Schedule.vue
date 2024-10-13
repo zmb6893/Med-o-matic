@@ -7,10 +7,7 @@ const hours = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM'
 
 const taskStore = useTaskStore();
 const tasks = computed(() => {
-	const filter = taskStore.filterPatient;
-	return taskStore.tasks.filter((t) => {
-		return t.patient.includes(filter.toString());
-	});
+	return taskStore.filteredTasks;
 });
 
 </script>

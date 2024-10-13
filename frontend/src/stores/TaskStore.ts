@@ -6,7 +6,7 @@ export const useTaskStore = defineStore('taskStore', {
 	state: () => ({
 		tasks: tasks as TaskType[],
 		selectedTask: tasks[0] as TaskType,
-		filterPatient: '' as String
+		filteredTasks: tasks as TaskType[],
 	}),
 
 	actions: {
@@ -32,7 +32,10 @@ export const useTaskStore = defineStore('taskStore', {
 			if (task) this.selectedTask = task
 		},
 		setFilterPatient(name: string) {
-			this.filterPatient = name;
+			this.filteredTasks = this.tasks.filter(task => {
+				console.log('filtering...')
+				return task.patient.includes(name)
+			})
 		},
 		updateTaskOwner(newOwner: string) {
 			this.selectedTask.owner = newOwner;

@@ -6,6 +6,7 @@ const taskStore = useTaskStore();
 const search = (options: any) => {
     let searchText = options.target.value;
     taskStore.setFilterPatient(searchText);
+    console.log(options.target.value)
 }
 
 </script>
@@ -14,7 +15,7 @@ const search = (options: any) => {
 
 <!-- search -->
 <label>Search Patients</label><input type="text"
-      @change="search" ></input>
+      @input="search" ></input>
 
 </template>
 
