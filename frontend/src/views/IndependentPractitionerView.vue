@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import OptionsBar from '@/components/OptionsBar.vue';
 import Schedule from '@/components/Schedule.vue';
 import TaskDesc from '@/components/TaskDesc.vue';
 import TodoList from '@/components/TodoList.vue';
@@ -8,7 +7,6 @@ import TodoList from '@/components/TodoList.vue';
 </script>
 
 <template>
-	<OptionsBar></OptionsBar>
 	<div class="row">
 		<div class="col-3 column-section">
 			<h1 class="center">
