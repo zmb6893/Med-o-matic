@@ -2,6 +2,7 @@ import type { TaskType } from "@/components/Task/Task";
 import { tasks } from "@/data/tasks";
 import { demoTasks } from "@/data/demoTasks";
 import { defineStore } from "pinia";
+import axios from 'axios';
 
 export const useTaskStore = defineStore('taskStore', {
 	state: () => ({
@@ -11,6 +12,12 @@ export const useTaskStore = defineStore('taskStore', {
 	}),
 
 	actions: {
+		async getTasks() {
+			const response = await axios.get('http://localhost:3000/tasks');
+			this.tasks = response.data;
+			this.selectedTask = this.tasks[0];
+			this.filteredTasks = this.tasks;
+		},
 		addTask(task: TaskType) {
 			this.tasks.push(task);
 			this.selectedTask = task;
