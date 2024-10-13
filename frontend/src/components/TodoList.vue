@@ -33,7 +33,24 @@ const updateSelectedTaskOwner = (isChecked: boolean, username: string, taskId: s
 }
 
 const createNewTask = () => {
-	
+	const newTask: TaskType = {
+		status: 'UNCLAIMED',
+		name: '',
+		owner: '',
+		patient: '',
+		location: '',
+		date: new Date(),
+		startTime: {
+			hour: 0,
+			minute: 0
+		},
+		endTime: {
+			hour: 0,
+			minute: 0
+		},
+		id: ''
+	}
+	taskStore.addTask(newTask);
 }
 
 </script>
