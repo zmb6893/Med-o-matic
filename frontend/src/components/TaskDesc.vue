@@ -17,6 +17,9 @@ const updateSelectedTaskOwner = (isChecked: boolean, username: string) => {
 <template>
 
     <!-- TODO let a practitioner edit the description -->
+    <h1 class="spacing">
+        Task Description
+    </h1>
 
     <span><h4>Task Name:<textarea>{{ task.name }}</textarea></h4></span>
 

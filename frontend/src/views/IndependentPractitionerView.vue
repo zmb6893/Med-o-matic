@@ -9,27 +9,18 @@ import TodoList from '@/components/TodoList.vue';
 <template>
 	<div class="row">
 		<div class="col-3 column-section">
-			<h1 class="spacing">
-				Schedule
-			</h1>
 			<Schedule></Schedule>
 		</div>
 		<div class="col-5 column-section">
-			<h1 class="spacing">
-				TODO Tasks
-			</h1>
 			<TodoList></TodoList>
 		</div>
 		<div class="col-3 column-section">
-			<h1 class="spacing">
-				Task Description
-			</h1>
 			<TaskDesc></TaskDesc>
 		</div>
 	</div>
 </template>
 
-<style scoped>
+<style>
 	.column-section {
 		background-color: #FFFFFF;
 		border-radius: .5rem;
@@ -46,5 +37,13 @@ import TodoList from '@/components/TodoList.vue';
 
 	.spacing {
 		padding: 1rem;
+	}
+
+	.task-button {
+		margin: 1rem;
+	}
+
+	.align-end {
+		text-align: end;
 	}
 </style>
