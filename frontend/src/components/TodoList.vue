@@ -3,7 +3,7 @@ import { useTaskStore } from '@/stores/TaskStore';
 import type { TaskType } from './Task/Task';
 import { tasks } from '@/data/tasks';
 import { useCurrentUserStore } from '@/stores/CurrentUserStore';
-import { computed } from 'vue';
+import { computed, watch } from 'vue';
 
 const headers: string[] = [
 	'Status',
@@ -16,6 +16,7 @@ const headers: string[] = [
 
 const taskStore = useTaskStore();
 const userStore = useCurrentUserStore();
+
 const tableContent = computed(() => {
 	return taskStore.filteredTasks;
 });
@@ -83,6 +84,7 @@ const createNewTask = () => {
 				<input 
 					type="checkbox" 
 					:checked="task.status === 'COMPLETE'"
+					:disabled="task.status === 'UNCLAIMED'"
 					@click="updateStatus(task.id)"
 					>
 			</td>
@@ -93,7 +95,7 @@ const createNewTask = () => {
 			<td>
 				<input 
 					type="checkbox" 
-					:checked="task.status === 'COMPLETE'"
+					:checked="task.status !== 'UNCLAIMED'"
 					@click="updateSelectedTaskOwner($event.target?.checked, userStore.user.name, task.id)"
 					>
 			</td>

@@ -1,12 +1,13 @@
 import type { TaskType } from "@/components/Task/Task";
 import { tasks } from "@/data/tasks";
+import { demoTasks } from "@/data/demoTasks";
 import { defineStore } from "pinia";
 
 export const useTaskStore = defineStore('taskStore', {
 	state: () => ({
-		tasks: tasks as TaskType[],
-		selectedTask: tasks[0] as TaskType,
-		filteredTasks: tasks as TaskType[],
+		tasks: demoTasks as TaskType[],
+		selectedTask: demoTasks[0] as TaskType,
+		filteredTasks: demoTasks as TaskType[],
 	}),
 
 	actions: {
@@ -21,8 +22,14 @@ export const useTaskStore = defineStore('taskStore', {
 		toggleTaskCompletion(taskId: string) {
 			const task = this.tasks.find(task => task.id === taskId);
 			if (task) {
-				if (task.status === 'COMPLETE') task.status = 'INCOMPLETE';
-				else if (task.status === 'INCOMPLETE') task.status = 'COMPLETE';
+				if (task.status === 'COMPLETE') {
+					task.status = 'INCOMPLETE';
+					task.followUpTasks?.forEach(followUpTask => this.removeTask(followUpTask.id))
+				}
+				else if (task.status === 'INCOMPLETE') {
+					task.status = 'COMPLETE';
+					task.followUpTasks?.forEach(followUpTask => this.addTask(followUpTask))
+				}
 				else if (task.status === 'UNCLAIMED') task.status = 'INCOMPLETE';
 			}
 			if (task) this.selectedTask = task;
@@ -49,13 +56,18 @@ export const useTaskStore = defineStore('taskStore', {
 				return 1;
 			})
 		},
+
 		updateTaskOwner(newOwner: string) {
 			this.selectedTask.owner = newOwner;
+			this.selectedTask.status = newOwner ? "INCOMPLETE" : "UNCLAIMED"
+			console.log(this.selectedTask.status)
 		},
+
 		updateTaskOwnerById(taskId: string, newOwner: string) {
 			this.tasks.forEach(task => {
 				if (task.id === taskId) {
 					task.owner = newOwner;
+					task.status = newOwner ? "INCOMPLETE" : "UNCLAIMED";
 				}
 			})
 		}

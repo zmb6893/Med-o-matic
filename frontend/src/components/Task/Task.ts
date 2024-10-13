@@ -8,6 +8,8 @@ export type TaskType = {
 	startTime: TaskTime 
 	endTime: TaskTime
 	id: string
+	followUpTasks?: TaskType[]
+	parent?: string
 }
 
 export type TaskTime = {

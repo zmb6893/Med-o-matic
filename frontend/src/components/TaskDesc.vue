@@ -80,6 +80,12 @@ const taskEndMin = computed({
         taskStore.selectedTask.endTime.minute = end;
     }
 });
+const taskOwner = computed(() => { 
+    return taskStore.selectedTask.owner
+});
+const taskStatus = computed(() => { 
+    return taskStore.selectedTask.status
+});
 
 
 const taskModel = ref(task);
@@ -104,7 +110,7 @@ function get(): import("vue").ComputedGetter<unknown> {
 
     <span>
         <div class="horizontal">
-            <span ><h4>Task Owner:</h4> <h5 :class="{'claimed-task': task.owner, 'unclaimed-task': !task.owner}"> {{ task.owner ? task.owner : 'OWNER NEEDED'}} </h5></span>            
+            <span ><h4>Task Owner:</h4> <h5 :class="{'claimed-task': taskOwner, 'unclaimed-task': !taskOwner}"> {{ taskOwner ? taskOwner : 'OWNER NEEDED'}} </h5></span>            
         </div>
         
         <span style="display:inline-block; width: 2rem;"></span>
@@ -114,7 +120,7 @@ function get(): import("vue").ComputedGetter<unknown> {
             :checked="task.owner === userStore.user.name"
         > Assign to me
 
-        <p><b>Task Status</b> <i>{{ task.status }} </i></p>
+        <p><b>Task Status</b> <i>{{ taskStatus }} </i></p>
     </span>
     
     <p>Patient name: <input v-model="taskPatient"> </p>
