@@ -13,5 +13,4 @@ export type TaskType = {
 export type TaskTime = {
 	hour: Number
 	minute: Number
-	type: 'AM' | 'PM'
 }

@@ -3,7 +3,7 @@ import { computed } from 'vue';
 import Task from './Task/Task.vue';
 import { useTaskStore } from '@/stores/TaskStore';
 
-const hours = ['1AM', '2AM', '3AM', '4AM', '5AM', '6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5PM', '6PM', '7PM', '8PM', '9PM', '10PM', '11PM', '12PM']
+const hours = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23']
 
 const taskStore = useTaskStore();
 const tasks = computed(() => {
@@ -20,7 +20,7 @@ const tasks = computed(() => {
 			</td>
 			<td class="task-cell">
 				<Task :tasks="tasks.filter(task => {
-					return `${task.startTime.hour} ${task.startTime.type}` === time;
+					return `${task.startTime.hour}` === time;
 				})"></Task>
 			</td>
 		</tr>

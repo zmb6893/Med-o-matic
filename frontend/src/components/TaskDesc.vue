@@ -35,15 +35,13 @@ const updateSelectedTaskOwner = (isChecked: boolean, username: string) => {
         <p><b>Task Status</b> <i>{{ task.status }} </i></p>
     </span>
     
-
-
-    
-    
     <p>Patient name: <input :value="task.patient"> </p>
-    <p>Location:  <input :value="task.location"></p>
+    <p>Location: <input :value="task.location"></p>
     <p>Date: <input :value="task.date.toDateString()"></p>
-    <p>Start: <input :value="task.startTime.hour + ':' + task.startTime.minute.toString().padStart(2, '0') + ' ' + task.startTime.type"></p>
-    <p>End: <input :value="task.endTime.hour + ':' + task.endTime.minute.toString().padStart(2, '0') + task.endTime.type"></p>
+    <p>Start: <input :value="task.startTime.hour + ':' + task.startTime.minute.toString().padStart(2, '0')"></p>
+    <p>End: <input :value="task.endTime.hour + ':' + task.endTime.minute.toString().padStart(2, '0')"></p>
+
+    <button onsubmit="save">Save Details</button>
 
 </template>
 

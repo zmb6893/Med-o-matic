@@ -14,13 +14,11 @@ export const tasks: TaskType[] = [
 		date: new Date(),
 		startTime: {
 			hour: 6,
-			minute: 0,
-			type: 'AM'
+			minute: 0
 		},
 		endTime: {
 			hour: 7,
-			minute: 0,
-			type: 'AM'
+			minute: 0
 		}
 	},
 	{
@@ -33,13 +31,11 @@ export const tasks: TaskType[] = [
 		date: new Date(),
 		startTime: {
 			hour: 8,
-			minute: 0,
-			type: 'AM'
+			minute: 0
 		},
 		endTime: {
 			hour: 10,
-			minute: 0,
-			type: 'AM'
+			minute: 0
 		}
 	},
 	{
@@ -52,13 +48,11 @@ export const tasks: TaskType[] = [
 		date: new Date(),
 		startTime: {
 			hour: 8,
-			minute: 0,
-			type: 'AM'
+			minute: 0
 		},
 		endTime: {
 			hour: 9,
-			minute: 0,
-			type: 'AM'
+			minute: 0
 		}
 	},
 	{
@@ -71,13 +65,11 @@ export const tasks: TaskType[] = [
 		date: new Date(),
 		startTime: {
 			hour: 8,
-			minute: 0,
-			type: 'AM'
+			minute: 0
 		},
 		endTime: {
 			hour: 9,
-			minute: 0,
-			type: 'AM'
+			minute: 0
 		}
 	},
 	{
@@ -90,13 +82,11 @@ export const tasks: TaskType[] = [
 		date: new Date(),
 		startTime: {
 			hour: 10,
-			minute: 0,
-			type: 'AM'
+			minute: 0
 		},
 		endTime: {
 			hour: 11,
-			minute: 0,
-			type: 'AM'
+			minute: 0
 		}
 	},
 	{
@@ -108,14 +98,12 @@ export const tasks: TaskType[] = [
 		location: 'room 203',
 		date: new Date(),
 		startTime: {
-			hour: 1,
-			minute: 0,
-			type: 'PM'
+			hour: 13,
+			minute: 0
 		},
 		endTime: {
-			hour: 2,
-			minute: 0,
-			type: 'PM'
+			hour: 14,
+			minute: 0
 		}
 	},
 	{
@@ -127,14 +115,12 @@ export const tasks: TaskType[] = [
 		location: 'room 203',
 		date: new Date(),
 		startTime: {
-			hour: 4,
-			minute: 0,
-			type: 'PM'
+			hour: 16,
+			minute: 0
 		},
 		endTime: {
-			hour: 5,
-			minute: 0,
-			type: 'PM'
+			hour: 17,
+			minute: 0
 		}
 	},
 	{
@@ -146,33 +132,12 @@ export const tasks: TaskType[] = [
 		location: 'room 203',
 		date: new Date(),
 		startTime: {
-			hour: 6,
-			minute: 0,
-			type: 'AM'
+			hour: 16,
+			minute: 0
 		},
 		endTime: {
-			hour: 7,
-			minute: 0,
-			type: 'AM'
-		}
-	},
-	{
-		id: crypto.randomUUID(),
-		status: 'UNCLAIMED',
-		name: 'Follow up on patient prescription',
-		owner: 'Fred',
-		patient: 'Isadora M.',
-		location: 'room 203',
-		date: new Date(),
-		startTime: {
-			hour: 6,
-			minute: 0,
-			type: 'AM'
-		},
-		endTime: {
-			hour: 7,
-			minute: 0,
-			type: 'AM'
+			hour: 17,
+			minute: 0
 		}
 	},
 	{
@@ -184,14 +149,12 @@ export const tasks: TaskType[] = [
 		location: 'room 203',
 		date: new Date(),
 		startTime: {
-			hour: 6,
-			minute: 0,
-			type: 'AM'
+			hour: 17,
+			minute: 0
 		},
 		endTime: {
-			hour: 7,
-			minute: 0,
-			type: 'AM'
+			hour: 18,
+			minute: 0
 		}
 	},
 	{
@@ -203,14 +166,12 @@ export const tasks: TaskType[] = [
 		location: 'room 203',
 		date: new Date(),
 		startTime: {
-			hour: 4,
-			minute: 0,
-			type: 'PM'
+			hour: 18,
+			minute: 0
 		},
 		endTime: {
-			hour: 5,
-			minute: 0,
-			type: 'PM'
+			hour: 19,
+			minute: 0
 		}
 	},
 	{
@@ -222,52 +183,12 @@ export const tasks: TaskType[] = [
 		location: 'room 203',
 		date: new Date(),
 		startTime: {
-			hour: 5,
-			minute: 0,
-			type: 'PM'
+			hour: 18,
+			minute: 0
 		},
 		endTime: {
-			hour: 6,
-			minute: 0,
-			type: 'PM'
-		}
-	},
-	{
-		id: crypto.randomUUID(),
-		status: 'UNCLAIMED',
-		name: 'Follow up on patient prescription',
-		owner: '',
-		patient: 'Isadora M.',
-		location: 'room 203',
-		date: new Date(),
-		startTime: {
-			hour: 6,
-			minute: 0,
-			type: 'PM'
-		},
-		endTime: {
-			hour: 7,
-			minute: 0,
-			type: 'PM'
-		}
-	},
-	{
-		id: crypto.randomUUID(),
-		status: 'UNCLAIMED',
-		name: 'Follow up on patient prescription',
-		owner: '',
-		patient: 'Isadora M.',
-		location: 'room 203',
-		date: new Date(),
-		startTime: {
-			hour: 6,
-			minute: 0,
-			type: 'PM'
-		},
-		endTime: {
-			hour: 7,
-			minute: 0,
-			type: 'PM'
+			hour: 19,
+			minute: 0
 		}
 	},
 	{
@@ -277,8 +198,8 @@ export const tasks: TaskType[] = [
 		patient: 'John Doe',
 		location: 'General Hospital, Room 301',
 		date: new Date(),
-		startTime: { hour: 10, minute: 30, type: 'AM' },
-		endTime: { hour: 11, minute: 0, type: 'AM' },
+		startTime: { hour: 10, minute: 30 },
+		endTime: { hour: 11, minute: 0 },
 		id: crypto.randomUUID()
 	},
 	{
@@ -288,8 +209,8 @@ export const tasks: TaskType[] = [
 		patient: 'Jane Smith',
 		location: 'Cardiology Clinic, Room 12',
 		date: new Date(),
-		startTime: { hour: 2, minute: 0, type: 'PM' },
-		endTime: { hour: 2, minute: 30, type: 'PM' },
+		startTime: { hour: 2, minute: 0 },
+		endTime: { hour: 2, minute: 30 },
 		id: crypto.randomUUID()
 	},
 	{
@@ -299,8 +220,8 @@ export const tasks: TaskType[] = [
 		patient: 'Michael Brown',
 		location: 'Orthopedic Clinic, Room 5',
 		date: new Date(),
-		startTime: { hour: 9, minute: 0, type: 'AM' },
-		endTime: { hour: 9, minute: 45, type: 'AM' },
+		startTime: { hour: 9, minute: 0 },
+		endTime: { hour: 9, minute: 45 },
 		id: crypto.randomUUID()
 	},
 	{
@@ -310,8 +231,8 @@ export const tasks: TaskType[] = [
 		patient: 'Alice Green',
 		location: 'Ophthalmology Clinic, Room 2',
 		date: new Date(),
-		startTime: { hour: 11, minute: 0, type: 'AM' },
-		endTime: { hour: 11, minute: 30, type: 'AM' },
+		startTime: { hour: 11, minute: 0 },
+		endTime: { hour: 11, minute: 30 },
 		id: crypto.randomUUID()
 	},
 	{
@@ -321,8 +242,8 @@ export const tasks: TaskType[] = [
 		patient: 'William Harris',
 		location: 'Surgical Ward, Room 15',
 		date: new Date(),
-		startTime: { hour: 3, minute: 15, type: 'PM' },
-		endTime: { hour: 3, minute: 45, type: 'PM' },
+		startTime: { hour: 3, minute: 15 },
+		endTime: { hour: 3, minute: 45 },
 		id: crypto.randomUUID()
 	},
 	{
@@ -332,8 +253,8 @@ export const tasks: TaskType[] = [
 		patient: 'Emma White',
 		location: 'ICU, Room 8',
 		date: new Date(),
-		startTime: { hour: 8, minute: 0, type: 'AM' },
-		endTime: { hour: 8, minute: 15, type: 'AM' },
+		startTime: { hour: 8, minute: 0 },
+		endTime: { hour: 8, minute: 15 },
 		id: crypto.randomUUID()
 	},
 	{
@@ -343,8 +264,8 @@ export const tasks: TaskType[] = [
 		patient: 'Henry Clark',
 		location: 'Rehabilitation Ward, Room 4',
 		date: new Date(),
-		startTime: { hour: 10, minute: 45, type: 'AM' },
-		endTime: { hour: 11, minute: 15, type: 'AM' },
+		startTime: { hour: 22, minute: 45 },
+		endTime: { hour: 23, minute: 15 },
 		id: crypto.randomUUID()
 	}
 ]

@@ -26,10 +26,6 @@ const tableContent = computed(() => {
 			return -1;
 		} else if (t1.date > t2.date) {
 			return 1;
-		} else if (t1.startTime.type == 'AM' && t2.startTime.type == 'PM') { // check same AM/PM
-			return -1;
-		} else if (t1.startTime.type == 'PM' && t2.startTime.type == 'AM') {
-			return 1;
 		} else if (t1.startTime.hour.valueOf() < t2.startTime.hour.valueOf()) { // check same hour
 			return -1;
 		} else if (t1.startTime.hour.valueOf() > t2.startTime.hour.valueOf()) {
