@@ -33,7 +33,6 @@ export const useTaskStore = defineStore('taskStore', {
 		},
 		setFilterPatient(name: string) {
 			this.filteredTasks = this.tasks.filter(task => {
-				console.log('filtering...')
 				return task.patient.includes(name)
 			})
 		},
