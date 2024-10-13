@@ -86,7 +86,7 @@ const createNewTask = () => {
 					@click="updateStatus(task.id)"
 					>
 			</td>
-			<td> {{ `${task.startTime.hour}:${task.startTime.minute.toString().padStart(2, '0')} ${task.startTime.type}` }}</td>
+			<td> {{ `${task.startTime.hour}:${task.startTime.minute.toString().padStart(2, '0')}` }}</td>
 			<td> {{ task.name }}</td>
 			<td> {{ task.location }}</td>
 			<td> {{ task.patient }}</td>
