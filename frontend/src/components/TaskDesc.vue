@@ -112,27 +112,27 @@ function get(): import("vue").ComputedGetter<unknown> {
         <div class="horizontal">
             <span ><h4>Task Owner:</h4> <h5 :class="{'claimed-task': taskOwner, 'unclaimed-task': !taskOwner}"> {{ taskOwner ? taskOwner : 'OWNER NEEDED'}} </h5></span>            
         </div>
-        
+        <p><span style="display:inline-block; width: 2rem;"></span><b>Task Status</b> <i>{{ taskStatus }} </i></p>
         <span style="display:inline-block; width: 2rem;"></span>
+        
         <input 
             type="checkbox" 
             @change="updateSelectedTaskOwner($event.target?.checked, userStore.user.name)"
             :checked="task.owner === userStore.user.name"
         > Assign to me
 
-        <p><b>Task Status</b> <i>{{ taskStatus }} </i></p>
     </span>
     
-    <p>Patient name: <input v-model="taskPatient"> </p>
-    <p>Location: <input v-model="taskLocation"></p>
-    <p>Date: <input v-model="taskDate"></p>
-    <p>Start hour: 
+    <p><b>Patient name: </b><input v-model="taskPatient"> </p>
+    <p><b>Location: </b><input v-model="taskLocation"></p>
+    <p><b>Date: </b><input v-model="taskDate"></p>
+    <p><b>Start hour: </b>
         <input v-model="taskStartHr" type="number" class="time-input"> 
-        minute: 
+        <b>minute: </b>
         <input v-model="taskStartMin" type="number" class="time-input"></p>
-    <p>End hour: 
+    <p><b>End hour: </b>
         <input v-model="taskEndHr" type="number" class="time-input"> 
-        minute: 
+        <b>minute: </b>
         <input v-model="taskEndMin" type="number" class="time-input"></p>
 
 </template>

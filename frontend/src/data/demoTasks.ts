@@ -5,19 +5,31 @@ const idTree = {
         '0-0': crypto.randomUUID(),
             '0-0-0': crypto.randomUUID(),
                 '0-0-0-0': crypto.randomUUID(),
-                '0-0-0-1': crypto.randomUUID(),  // New: Vital Signs Check
-            '0-0-1': crypto.randomUUID(),  // New: Assisted Walking Exercise
+                '0-0-0-1': crypto.randomUUID(),  
+            '0-0-1': crypto.randomUUID(),  
     '1': crypto.randomUUID(),
         '1-0': crypto.randomUUID(),
-            '1-0-0': crypto.randomUUID(),  // New: Blood Pressure Monitoring
-            '1-0-1': crypto.randomUUID(),  // New: Dietary Consultation
+            '1-0-0': crypto.randomUUID(),  
+            '1-0-1': crypto.randomUUID(),  
     '2': crypto.randomUUID(),
         '2-0': crypto.randomUUID(),
             '2-0-0': crypto.randomUUID(),
                 '2-0-0-0': crypto.randomUUID(),
                 '2-0-0-1': crypto.randomUUID(),
-            '2-0-1': crypto.randomUUID(),  // New: Yoga Breathing Exercises
-        '2-1': crypto.randomUUID()  // New: Evening Walk
+            '2-0-1': crypto.randomUUID(),  
+        '2-1': crypto.randomUUID(),  
+    '3': crypto.randomUUID(),
+        '3-0': crypto.randomUUID(),
+            '3-0-0': crypto.randomUUID(),  
+            '3-0-1': crypto.randomUUID(),  
+    '4': crypto.randomUUID(),
+        '4-0': crypto.randomUUID(),
+            '4-0-0': crypto.randomUUID(),  
+            '4-0-1': crypto.randomUUID(),  
+    '5': crypto.randomUUID(),
+        '5-0': crypto.randomUUID(),
+            '5-0-0': crypto.randomUUID(),  
+            '5-0-1': crypto.randomUUID(),  
 };
 
 export const demoTasks: TaskType[] = [
@@ -130,7 +142,7 @@ export const demoTasks: TaskType[] = [
                         date: new Date('2024-01-08'),
                         startTime: { hour: 9, minute: 30 },
                         endTime: { hour: 9, minute: 45 },
-                        id: crypto.randomUUID(),
+                        id: idTree['1-0-0'],
                         parent: idTree['1-0']
                     },
                     {
@@ -142,7 +154,7 @@ export const demoTasks: TaskType[] = [
                         date: new Date('2024-01-08'),
                         startTime: { hour: 10, minute: 15 },
                         endTime: { hour: 11, minute: 0 },
-                        id: crypto.randomUUID(),
+                        id: idTree['1-0-1'],
                         parent: idTree['1-0']
                     }
                 ]
@@ -151,91 +163,155 @@ export const demoTasks: TaskType[] = [
     },
     {
         status: 'UNCLAIMED',
-        name: 'Daily Walking Exercise',
-        owner: '',
+        name: 'Physical Therapy Session',
+        owner: 'Physical Therapist',
         patient: 'John Doe',
-        location: 'Home',
-        date: new Date('2024-01-21'),
-        startTime: { hour: 8, minute: 0 },
-        endTime: { hour: 8, minute: 30 },
-        id: idTree['2'],
+        location: 'Therapy Center',
+        date: new Date('2024-01-10'),
+        startTime: { hour: 2, minute: 0 },
+        endTime: { hour: 3, minute: 0 },
+        id: idTree['3'],
         followUpTasks: [
             {
                 status: 'UNCLAIMED',
-                name: 'Stretching Exercises',
+                name: 'Range of Motion Exercises',
                 owner: '',
                 patient: 'John Doe',
-                location: 'Home',
-                date: new Date('2024-01-22'),
-                startTime: { hour: 8, minute: 30 },
-                endTime: { hour: 9, minute: 0 },
-                id: idTree['2-0'],
-                parent: idTree['2'],
+                location: 'Therapy Center',
+                date: new Date('2024-01-10'),
+                startTime: { hour: 2, minute: 15 },
+                endTime: { hour: 2, minute: 45 },
+                id: idTree['3-0'],
+                parent: idTree['3'],
                 followUpTasks: [
                     {
                         status: 'UNCLAIMED',
-                        name: 'Strength Building Session',
+                        name: 'Shoulder Flexibility',
                         owner: '',
                         patient: 'John Doe',
-                        location: 'Physical Therapy Room',
-                        date: new Date('2024-01-24'),
-                        startTime: { hour: 10, minute: 0 },
-                        endTime: { hour: 10, minute: 45 },
-                        id: idTree['2-0-0'],
-                        parent: idTree['2-0'],
-                        followUpTasks: [
-                            {
-                                status: 'UNCLAIMED',
-                                name: 'Endurance Assessment',
-                                owner: '',
-                                patient: 'John Doe',
-                                location: 'Physical Therapy Room',
-                                date: new Date('2024-01-26'),
-                                startTime: { hour: 9, minute: 0 },
-                                endTime: { hour: 9, minute: 30 },
-                                id: idTree['2-0-0-0'],
-                                parent: idTree['2-0-0']
-                            },
-                            {
-                                status: 'UNCLAIMED',
-                                name: 'Medical Checkup',
-                                owner: '',
-                                patient: 'John Doe',
-                                location: 'Lab',
-                                date: new Date('2024-01-26'),
-                                startTime: { hour: 11, minute: 0 },
-                                endTime: { hour: 11, minute: 30 },
-                                id: idTree['2-0-0-1'],
-                                parent: idTree['2-0-0']
-                            }
-                        ]
+                        location: 'Therapy Center',
+                        date: new Date('2024-01-10'),
+                        startTime: { hour: 2, minute: 45 },
+                        endTime: { hour: 3, minute: 0 },
+                        id: idTree['3-0-0'],
+                        parent: idTree['3-0']
                     },
                     {
                         status: 'UNCLAIMED',
-                        name: 'Yoga Breathing Exercises',
+                        name: 'Leg Stretching',
                         owner: '',
                         patient: 'John Doe',
-                        location: 'Home',
-                        date: new Date('2024-01-23'),
-                        startTime: { hour: 8, minute: 45 },
-                        endTime: { hour: 9, minute: 15 },
-                        id: crypto.randomUUID(),
-                        parent: idTree['2-0']
+                        location: 'Therapy Center',
+                        date: new Date('2024-01-10'),
+                        startTime: { hour: 3, minute: 0 },
+                        endTime: { hour: 3, minute: 15 },
+                        id: idTree['3-0-1'],
+                        parent: idTree['3-0']
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        status: 'UNCLAIMED',
+        name: 'Dietary Counseling Session',
+        owner: 'Nutritionist',
+        patient: 'John Doe',
+        location: 'Clinic',
+        date: new Date('2024-01-12'),
+        startTime: { hour: 10, minute: 0 },
+        endTime: { hour: 11, minute: 0 },
+        id: idTree['4'],
+        followUpTasks: [
             {
                 status: 'UNCLAIMED',
-                name: 'Evening Walk',
+                name: 'Meal Plan Review',
                 owner: '',
                 patient: 'John Doe',
-                location: 'Neighborhood Park',
-                date: new Date('2024-01-22'),
-                startTime: { hour: 5, minute: 0 },
-                endTime: { hour: 5, minute: 30 },
-                id: crypto.randomUUID(),
-                parent: idTree['2']
+                location: 'Clinic',
+                date: new Date('2024-01-12'),
+                startTime: { hour: 10, minute: 15 },
+                endTime: { hour: 10, minute: 45 },
+                id: idTree['4-0'],
+                parent: idTree['4'],
+                followUpTasks: [
+                    {
+                        status: 'UNCLAIMED',
+                        name: 'Protein Intake Evaluation',
+                        owner: '',
+                        patient: 'John Doe',
+                        location: 'Clinic',
+                        date: new Date('2024-01-12'),
+                        startTime: { hour: 10, minute: 30 },
+                        endTime: { hour: 10, minute: 45 },
+                        id: idTree['4-0-0'],
+                        parent: idTree['4-0']
+                    },
+                    {
+                        status: 'UNCLAIMED',
+                        name: 'Carbohydrate Needs Assessment',
+                        owner: '',
+                        patient: 'John Doe',
+                        location: 'Clinic',
+                        date: new Date('2024-01-12'),
+                        startTime: { hour: 10, minute: 45 },
+                        endTime: { hour: 11, minute: 0 },
+                        id: idTree['4-0-1'],
+                        parent: idTree['4-0']
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        status: 'INCOMPLETE',
+        name: 'Lab Work & Blood Tests',
+        owner: 'Lab Technician',
+        patient: 'John Doe',
+        location: 'Lab Center',
+        date: new Date('2024-01-15'),
+        startTime: { hour: 8, minute: 0 },
+        endTime: { hour: 8, minute: 30 },
+        id: idTree['5'],
+        followUpTasks: [
+            {
+                status: 'UNCLAIMED',
+                name: 'Blood Sample Collection',
+                owner: '',
+                patient: 'John Doe',
+                location: 'Lab Center',
+                date: new Date('2024-01-15'),
+                startTime: { hour: 8, minute: 0 },
+                endTime: { hour: 8, minute: 15 },
+                id: idTree['5-0'],
+                parent: idTree['5'],
+                followUpTasks: [
+                    {
+                        status: 'UNCLAIMED',
+                        name: 'Blood Pressure Check',
+                        owner: '',
+                        patient: 'John Doe',
+                        location: 'Lab Center',
+                        date: new Date('2024-01-15'),
+                        startTime: { hour: 8, minute: 15 },
+                        endTime: { hour: 8, minute: 20 },
+                        id: idTree['5-0-0'],
+                        parent: idTree['5-0']
+                    },
+                    {
+                        status: 'UNCLAIMED',
+                        name: 'Cholesterol Test',
+                        owner: '',
+                        patient: 'John Doe',
+                        location: 'Lab Center',
+                        date: new Date('2024-01-15'),
+                        startTime: { hour: 8, minute: 20 },
+                        endTime: { hour: 8, minute: 30 },
+                        id: idTree['5-0-1'],
+                        parent: idTree['5-0']
+                    }
+                ]
             }
         ]
     }
-]
+];
