@@ -29,6 +29,9 @@ export const useTaskStore = defineStore('taskStore', {
 		setSelectedTask(taskId: string) {
 			const task = this.tasks.find(task => task.id === taskId)
 			if (task) this.selectedTask = task
+		},
+		updateTaskOwner(newOwner: string) {
+			this.selectedTask.owner = newOwner;
 		}
 	},
 
